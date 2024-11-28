@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": [
+      "es2015",
+      "ES2019",
+      "dom"
+    ],
+    "target": "es5",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "outDir": "temp/vscode-dist",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "strict": true,
+    "strictNullChecks": false
+  },
+  "exclude": [
+    "node_modules",
+    "library",
+    "local",
+    "temp",
+    "build",
+    "settings",
+    "**/*.tsx"
+  ]
+}

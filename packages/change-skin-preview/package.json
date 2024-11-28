@@ -1,0 +1,21 @@
+{
+  "name": "change-skin-preview",
+  "version": "0.0.1",
+  "description": "The package template for getting started.",
+  "author": "Cocos Creator",
+  "main": "main.js",
+  "scene-script": "scene-script.js",
+  "main-menu": {
+    "工具/换装预览": {
+      "message": "change-skin-preview:open"
+    }
+  },
+  "panel": {
+    "main": "panel/index.js",
+    "type": "dockable",
+    "title": "换装预览",
+    "icon": "icon-eye",
+    "width": 800,
+    "height": 600
+  }
+}

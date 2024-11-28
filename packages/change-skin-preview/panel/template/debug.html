@@ -1,0 +1,42 @@
+<style>
+    .right {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        overflow: hidden
+    }
+
+    .center {
+        position: absolute;
+        left: 50%
+    }
+
+    .top {
+        position: absolute;
+        top: 30px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+</style>
+
+<ui-box-container class="top layout vertical scroll">
+    <div class="layout vertical">
+        <div class="layout vertical" v-for="(index, item) in slots">
+            <div class="layout horizontal">
+                <div>{{item.slot.name}}</div>
+                <ui-checkbox class="flex-1" :checked="!!item.slot.attachmentName"
+                    @change="activeSlot(item.slot,$event.detail.value)"></ui-checkbox>
+                <div class="center">{{$index}}</div>
+                <ui-color :value="convertColor(item.slot.color)"
+                    @change="onSlotColorChange(item.slot,$event.detail.value)"></ui-color>
+            </div>
+            <div style="position: relative;left: 20px;" class="layout horizontal" v-for="(i, atta) in item.attachments">
+                <label>{{$index}} {{atta.attachment.name}}</label>
+                <ui-checkbox></ui-checkbox>
+            </div>
+            <br>
+        </div>
+    </div>
+</ui-box-container>

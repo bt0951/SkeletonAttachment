@@ -1,0 +1,27 @@
+<style>
+    .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr [col-start]);
+        grid-template-rows: 150px;
+        grid-auto-flow: row;
+        overflow-y: scroll;
+    }
+</style>
+
+<ui-box-container class="flex">
+    <div v-if="!loading" class="grid-4">
+        <div v-for="(index, item) in skins">
+            {{ getResUrl(item.url) }}
+            <ui-button style="height:100px;width: 100%;" :class="{'blue': isSelected(item) }"
+                :focused="isSelected(item)" @click="onClickSkin(item)">
+                <img style="height: 100px;width:auto;" class="fit" :src="getImgSrc(item.url)" />
+            </ui-button>
+            <ui-prop name="插槽">
+                <ui-select class="flex-1" @change="activeSlot(item,$event.detail.value)">
+                    <option v-for="(_index, _item) in slots" :value="_index">{{_item.name}}</option>
+                </ui-select>
+            </ui-prop>
+        </div>
+    </div>
+    <ui-loader class="tiny" v-if="loading">loading...</ui-loader>
+</ui-box-container>

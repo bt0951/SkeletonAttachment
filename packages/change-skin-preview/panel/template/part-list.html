@@ -1,0 +1,4 @@
+<ui-box-container class="layout horizontal scroll">
+    <ui-button :class="{'blue': isSelected(item) }" :focused="isSelected(item)" @click="onSelectPart(item)" v-for="(index, item) in parts"> {{item}}</ui-button>
+
+</ui-box-container>

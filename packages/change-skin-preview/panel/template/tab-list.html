@@ -1,0 +1,4 @@
+<div class="layout horizontal scroll">
+    <ui-button :class="{'blue': isSelected(index) }" :focused="isSelected(index)" @click="onSelectTab(index)"
+        v-for="(index, item) in list"> {{item}} </ui-button>
+</div>

@@ -1,0 +1,7 @@
+<ui-box-container v-if="!loading">
+    <ui-prop name="timeScale" type="number" slide="true" value="1" min="0" max="10" step="0.1"
+        @change="onTimeScaleChange($event.detail.value)"></ui-prop>
+    <ui-button :class="{'blue': isSelected(index) }" :focused="isSelected(index)" @click="onSelectAnimation(index)"
+        v-for="(index, item) in animations"> {{item}} </ui-button>
+    <ui-loader class="tiny" v-if="loading">loading...</ui-loader>
+</ui-box-container>

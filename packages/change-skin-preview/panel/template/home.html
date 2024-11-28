@@ -1,0 +1,12 @@
+<section class="fit layout vertical">
+    <div class="layout horizontal">
+        <ui-button @click="onClickReset">重置</ui-button>
+        <tab-list :list="getTabList()"></tab-list>
+    </div>
+    <div class="flex layout vertical scroll">
+        <part-list v-if="tabIndex == 0"></part-list>
+        <skin-list v-if="tabIndex == 0"></skin-list>
+        <animation-list v-if="tabIndex == 1"></animation-list>
+        <debug v-if="tabIndex==2"></debug>
+    </div>
+</section>
